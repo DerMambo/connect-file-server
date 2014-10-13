@@ -6,6 +6,6 @@ staticPath = process.env['APP_DYN_CONTENT_DIR']
 
 if staticPath
   WebApp.connectHandlers
-  .use('/uploads', connect.static())
+  .use('/uploads', connect.static(staticPath))
 else
   console.warn 'WARNING: You are using connect-file-server but did not specify a APP_DYN_CONTENT_DIR environment variable'
